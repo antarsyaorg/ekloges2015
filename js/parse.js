@@ -51,21 +51,18 @@ $(document).ready(function() {
 Path.map("#/party/:party").to(function(){
   var $li = $("#people li");
   var party = decodeURI(this.params['party']);
-  $li.hide();
-  $li = $li.filter('[data-party="' + party + '"]');
-  $li.show();
-  $li.prev(".perifereia").show();
   $("#section_dropdown").val("");
+  $li.hide();
+  $li.filter('[data-party="' + party + '"]').show();
+  $($li.filter('[data-party="' + party + '"]').prevAll(".perifereia")[0]).show();
 });
 
 Path.map("#/section/:section").to(function(){
   var $li = $("#people li");
   var section = decodeURI(this.params['section']);
-  $li.hide();
-  $li = $li.filter('[data-section="' + section + '"]');
-  $li.show();
-  $li.prev(".perifereia").show();
   $("#party_dropdown").val("");
+  $li.hide();
+  $li.filter('[data-section="' + section + '"]').show();
 });
 
 
