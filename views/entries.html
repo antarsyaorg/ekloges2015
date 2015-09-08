@@ -6,7 +6,8 @@
  {% endif %}
  <li class="entry" data-section="{{ entry.section }}" data-party="{{ entry.party }}">
    {% if not entry.avatar %}
-     <img src="http://dummyimage.com/60/60/fff&text={{ entry.initials }}" class="avatar">
+     {% set color = ['ffffb5', 'ffb5d3', 'ffe1b5']|random() %}
+     <img src="http://dummyimage.com/60x60/{{ color }}/000000.png&text={{ entry.initials }}" class="avatar">
    {% endif %}
    <div class="name">
      {% if entry.head %}
