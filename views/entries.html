@@ -1,0 +1,42 @@
+{% set section = '' %}
+{% for entry in entries %}
+ {% if entry.section != section %}
+   {% set section = entry.section %}
+   <li class="perifereia" data-section="{{ entry.section }}">{{ entry.section }}</li>
+ {% endif %}
+ <li class="entry" data-section="{{ entry.section }}" data-party="{{ entry.party }}">
+   {% if not entry.avatar %}
+     <img src="http://dummyimage.com/60/60/fff&text={{ entry.initials }}" class="avatar">
+   {% endif %}
+   <div class="name">
+     {% if entry.head %}
+       <i class="fa fa-star smaller-icon" title="Επικεφαλής" ></i>
+     {% endif %}
+     {{ entry.name }}
+     <span class="party">
+       <a href="#/party/{{ entry.party }}">{{ entry.party }}</a>
+     </span>
+   </div>
+   <div class="occupation">
+     {{ entry.occupation }}
+   </div>
+
+   {% if entry.bio %}
+   <div class="occupation">
+     {{ entry.bio }}
+   </div>
+   {% endif %}
+
+   {% if entry.twitter or entry.facebook %}
+   <div class="socialmedia">
+     {% if entry.twitter %}
+     <i class="fa fa-twitter-square fa-lg"></i>
+     {% endif %}
+     {% if entry.facebook %}
+     <i class="fa fa-facebook-square fa-lg"></i>
+     {% endif %}
+   </div>
+   {% endif %}
+ </li>
+ <!-- End Entry -->
+{% endfor %}

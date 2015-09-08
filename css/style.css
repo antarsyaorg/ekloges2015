@@ -1,0 +1,78 @@
+body {
+    font-family: "Fira Sans";
+    background: transparent radial-gradient(#F2F2F2, #E1E1E1, #E1DADA) repeat scroll 0% 0%;
+    color: #484848;
+    padding-top: 20px;
+}
+
+.avatar {
+    float: left;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.name .party {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.name .party:hover {
+    cursor: pointer;
+}
+
+#logo-container {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#logo-container img {
+    width: 80%;
+}
+.socialmedia {
+    float:right;
+}
+
+#people-container .perifereia {
+    font-size: 130%;
+    font-weight: bold;
+    padding: 0;
+}
+
+.name .smaller-icon {
+    font-size: 80%;
+    color: gold;
+    margin-right: 5px;
+}
+
+#people-container {
+}
+
+#people .name {
+    padding-top: 4px;
+}
+
+#people .perifereia {
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+}
+
+#people .entry {
+    background-color: white;
+    padding: 0;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+#footer {
+    text-align: center;
+    font-size: 90%;
+}
+
+#search-container input {
+    border: 0;
+    box-shadow: 0;
+}
