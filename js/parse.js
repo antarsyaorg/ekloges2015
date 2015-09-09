@@ -35,13 +35,15 @@ $(document).ready(function() {
     for (var k=0, l = data.entries.length; k < l; k++) {
       var section = data.entries[k].section;
       var party = data.entries[k].party;
-      if (sections[sections.length-1] != section) {
+      if (sections.indexOf(section) == -1) {
         sections.push(section);
       }
-      if (parties[parties.length-1] != party) {
+      if (party && parties.indexOf(party) == -1) {
         parties.push(party);
       }
     }
+    parties.sort();
+    sections.sort();
     $("#section_dropdown").append(nunjucks.render('dropdown.html', {'entries': sections}));
     $("#party_dropdown").append(nunjucks.render('dropdown.html', {'entries': parties}));
   });
@@ -53,8 +55,11 @@ Path.map("#/party/:party").to(function(){
   var party = decodeURI(this.params['party']);
   $("#section_dropdown").val("");
   $li.hide();
-  $li.filter('[data-party="' + party + '"]').show();
-  $($li.filter('[data-party="' + party + '"]').prevAll(".perifereia")[0]).show();
+  $li = $li.filter('[data-party="' + party + '"]');
+  $li.show();
+  $li.each(function() {
+    $($(this).prevAll('.perifereia')[0]).show();
+  });
 });
 
 Path.map("#/section/:section").to(function(){
