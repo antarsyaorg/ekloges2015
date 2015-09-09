@@ -5,9 +5,15 @@ body {
     padding-top: 20px;
 }
 
-.avatar {
+.entry .avatar {
     float: left;
     margin-right: 10px;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
 }
 
 .name {
